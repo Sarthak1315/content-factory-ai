@@ -1,0 +1,63 @@
+{
+  "duration_seconds": 249.974326,
+  "blog_word_count": 2218,
+  "linkedin_posts_count": 3,
+  "twitter_threads_count": 0,
+  "verification_confidence": 65,
+  "readability_score": 48.37836531691195,
+  "seo_score": 92,
+  "sources_used": 38,
+  "flagged_claims": 7,
+  "keywords": {
+    "primary": "Economic Impact of AI Automation on Small Businesses in 2025",
+    "secondary": [
+      "AI automation benefits for small business",
+      "AI tools for small business",
+      "Small business AI strategy",
+      "AI operational efficiency",
+      "Future of AI in small business",
+      "AI challenges for small business",
+      "AI-augmented workforce",
+      "Process automation for SMBs",
+      "AI adoption small business",
+      "AI implementation"
+    ]
+  },
+  "timings": {
+    "research": {
+      "avg_seconds": 48.75,
+      "min_seconds": 48.75,
+      "max_seconds": 48.75,
+      "total_seconds": 48.75,
+      "count": 1
+    },
+    "content_creation": {
+      "avg_seconds": 81.39,
+      "min_seconds": 81.39,
+      "max_seconds": 81.39,
+      "total_seconds": 81.39,
+      "count": 1
+    },
+    "fact_checking": {
+      "avg_seconds": 20.73,
+      "min_seconds": 20.73,
+      "max_seconds": 20.73,
+      "total_seconds": 20.73,
+      "count": 1
+    },
+    "editing": {
+      "avg_seconds": 29.61,
+      "min_seconds": 29.61,
+      "max_seconds": 29.61,
+      "total_seconds": 29.61,
+      "count": 1
+    },
+    "seo": {
+      "avg_seconds": 33.63,
+      "min_seconds": 33.63,
+      "max_seconds": 33.63,
+      "total_seconds": 33.63,
+      "count": 1
+    }
+  }
+}

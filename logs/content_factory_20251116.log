@@ -1,0 +1,559 @@
+2025-11-16 20:35:18 | __main__ | INFO | Starting Content Factory AI
+2025-11-16 20:35:18 | __main__ | INFO | API key validated
+2025-11-16 20:35:19 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:35:19 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:35:19 | orchestrator | INFO | Default brand voice set
+2025-11-16 20:35:19 | orchestrator | INFO | All agents initialized
+2025-11-16 20:35:19 | __main__ | INFO | All agents initialized successfully
+2025-11-16 20:35:19 | __main__ | INFO | Creating content for topic: Future of AI Agents in 2025
+2025-11-16 20:35:19 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:35:19 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:35:19 | orchestrator | ERROR | Error in content creation pipeline: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+2025-11-16 20:35:19 | __main__ | ERROR | Error creating content: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\main.py", line 61, in main
+    result = await orchestrator.create_content_package(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 38.847184093s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '38s'}]}}
+2025-11-16 20:35:19 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:35:19 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:35:19 | __main__ | INFO | Cleanup complete
+2025-11-16 20:35:46 | __main__ | INFO | Starting Content Factory AI
+2025-11-16 20:35:46 | __main__ | INFO | API key validated
+2025-11-16 20:35:47 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:35:47 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:35:47 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 20:35:47 | orchestrator | INFO | All agents initialized
+2025-11-16 20:35:47 | __main__ | INFO | All agents initialized successfully
+2025-11-16 20:35:47 | __main__ | INFO | Creating content for topic: Future of AI Agents in 2025
+2025-11-16 20:35:47 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:35:47 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:35:47 | orchestrator | ERROR | Error in content creation pipeline: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+2025-11-16 20:35:47 | __main__ | ERROR | Error creating content: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\main.py", line 61, in main
+    result = await orchestrator.create_content_package(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash-exp\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash-exp\nPlease retry in 10.847356717s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_input_token_count', 'quotaId': 'GenerateContentInputTokensPerModelPerMinute-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}, {'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash-exp'}}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '10s'}]}}
+2025-11-16 20:35:47 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:35:47 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:35:47 | __main__ | INFO | Cleanup complete
+2025-11-16 20:39:47 | __main__ | INFO | Starting Content Factory AI (Rate Limited)
+2025-11-16 20:39:47 | __main__ | INFO | API key validated
+2025-11-16 20:39:48 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:39:48 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:39:48 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 20:39:48 | orchestrator | INFO | All agents initialized
+2025-11-16 20:39:48 | __main__ | INFO | All agents initialized
+2025-11-16 20:39:48 | __main__ | INFO | Creating content for: Future of AI Agents in 2025
+2025-11-16 20:39:48 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:39:48 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:39:48 | orchestrator | ERROR | Error in content creation pipeline: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2025-11-16 20:39:48 | __main__ | ERROR | Error: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2025-11-16 20:39:48 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:39:48 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:42:03 | __main__ | INFO | Starting Content Factory AI (Rate Limited)
+2025-11-16 20:42:03 | __main__ | INFO | API key validated
+2025-11-16 20:42:04 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:42:04 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:42:04 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 20:42:04 | orchestrator | INFO | All agents initialized
+2025-11-16 20:42:04 | __main__ | INFO | All agents initialized
+2025-11-16 20:42:04 | __main__ | INFO | Creating content for: Future of AI Agents in 2025
+2025-11-16 20:42:04 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:42:04 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:42:04 | orchestrator | ERROR | Error in content creation pipeline: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 70, in research
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 131, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 195, in create_content_package
+    research_result = await self.research_agent.research(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\research_agent.py", line 105, in research
+    raise Exception(f"Research agent error: {str(e)}")
+Exception: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2025-11-16 20:42:04 | __main__ | ERROR | Error: Research agent error: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2025-11-16 20:42:04 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:42:04 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:45:01 | __main__ | INFO | Starting Content Factory AI
+2025-11-16 20:45:01 | __main__ | INFO | API key validated
+2025-11-16 20:45:01 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:45:01 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:45:01 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 20:45:01 | orchestrator | INFO | All agents initialized
+2025-11-16 20:45:01 | __main__ | INFO | All agents initialized
+2025-11-16 20:45:01 | __main__ | INFO | Creating content for: Future of AI Agents in 2025
+2025-11-16 20:45:01 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:45:01 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:45:40 | orchestrator | INFO | Research complete: 23 sources found
+2025-11-16 20:45:40 | orchestrator | INFO | Step 2: Creating content in parallel...
+2025-11-16 20:45:53 | orchestrator | ERROR | Error creating blog: Blog writer error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-11-16 20:45:53 | orchestrator | INFO | Content created for 1 platforms
+2025-11-16 20:45:53 | orchestrator | INFO | Step 3: Fact-Checker Agent verifying...
+2025-11-16 20:45:56 | orchestrator | INFO | Fact-checking complete: 100% confidence
+2025-11-16 20:45:56 | orchestrator | INFO | Step 4: Editor Agent polishing...
+2025-11-16 20:45:56 | orchestrator | ERROR | Error in content creation pipeline: Editor error: module 'google.genai.types' has no attribute 'CodeExecution'
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\editor_agent.py", line 77, in edit
+    tools=[types.Tool(code_execution=types.CodeExecution())]
+                                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'google.genai.types' has no attribute 'CodeExecution'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 274, in create_content_package
+    edited_blog = await self.editor.edit(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\editor_agent.py", line 98, in edit
+    raise Exception(f"Editor error: {str(e)}")
+Exception: Editor error: module 'google.genai.types' has no attribute 'CodeExecution'
+2025-11-16 20:45:56 | __main__ | ERROR | Error: Editor error: module 'google.genai.types' has no attribute 'CodeExecution'
+2025-11-16 20:45:56 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:45:56 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:45:56 | __main__ | INFO | Done!
+2025-11-16 20:49:51 | __main__ | INFO | Starting Content Factory AI
+2025-11-16 20:49:51 | __main__ | INFO | API key validated
+2025-11-16 20:49:52 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 20:49:52 | orchestrator | INFO | Initializing agents...
+2025-11-16 20:49:52 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 20:49:52 | orchestrator | INFO | All agents initialized
+2025-11-16 20:49:52 | __main__ | INFO | All agents initialized
+2025-11-16 20:49:52 | __main__ | INFO | Creating content for: Future of AI Agents in 2025
+2025-11-16 20:49:52 | orchestrator | INFO | Starting content package creation for: Future of AI Agents in 2025
+2025-11-16 20:49:52 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 20:50:35 | orchestrator | INFO | Research complete: 0 sources found
+2025-11-16 20:50:35 | orchestrator | INFO | Step 2: Creating content in parallel...
+2025-11-16 20:50:36 | orchestrator | ERROR | Error creating blog: Blog writer error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-11-16 20:50:36 | orchestrator | INFO | Content created for 1 platforms
+2025-11-16 20:50:36 | orchestrator | INFO | Step 3: Fact-Checker Agent verifying...
+2025-11-16 20:50:39 | orchestrator | INFO | Fact-checking complete: 100% confidence
+2025-11-16 20:50:39 | orchestrator | INFO | Step 4: Editor Agent polishing...
+2025-11-16 20:50:55 | orchestrator | INFO | Editing complete: Readability score 44.23333333333335/100
+2025-11-16 20:50:55 | orchestrator | INFO | Step 5: SEO Agent optimizing...
+2025-11-16 20:51:08 | orchestrator | INFO | SEO optimization complete: Score 0/100
+2025-11-16 20:51:08 | orchestrator | INFO | Step 6: Analytics Agent learning...
+2025-11-16 20:51:08 | orchestrator | INFO | Analytics complete: 0 patterns identified
+2025-11-16 20:51:08 | orchestrator | INFO | Content package complete in 76.11 seconds
+2025-11-16 20:51:08 | orchestrator | INFO | All outputs saved to examples/sample_output/
+2025-11-16 20:51:08 | orchestrator | INFO | Cleaning up resources...
+2025-11-16 20:51:08 | orchestrator | INFO | Cleanup complete
+2025-11-16 20:51:08 | __main__ | INFO | Done!
+2025-11-16 21:11:47 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 21:11:47 | orchestrator | INFO | Initializing agents...
+2025-11-16 21:11:47 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 21:11:47 | orchestrator | INFO | All agents initialized
+2025-11-16 21:11:47 | orchestrator | INFO | Starting content package creation for: Future of cyber security in 2026
+2025-11-16 21:11:47 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 21:12:41 | orchestrator | INFO | Research complete: 28 sources found
+2025-11-16 21:12:41 | orchestrator | INFO | Step 2: Creating content in parallel...
+2025-11-16 21:13:34 | orchestrator | INFO | Content created for 1 platforms
+2025-11-16 21:13:34 | orchestrator | INFO | Step 3: Fact-Checker Agent verifying...
+2025-11-16 21:14:04 | orchestrator | INFO | Fact-checking complete: 88% confidence
+2025-11-16 21:14:04 | orchestrator | WARNING | Warning: 2 claims flagged for review
+2025-11-16 21:14:04 | orchestrator | INFO | Step 4: Editor Agent polishing...
+2025-11-16 21:14:43 | orchestrator | INFO | Editing complete: Readability score 30.526038961038978/100
+2025-11-16 21:14:43 | orchestrator | INFO | Step 5: SEO Agent optimizing...
+2025-11-16 21:15:11 | orchestrator | INFO | SEO optimization complete: Score 75/100
+2025-11-16 21:15:11 | orchestrator | INFO | Step 6: Analytics Agent learning...
+2025-11-16 21:15:11 | orchestrator | INFO | Analytics complete: 0 patterns identified
+2025-11-16 21:15:11 | orchestrator | INFO | Content package complete in 204.85 seconds
+2025-11-16 21:15:11 | orchestrator | INFO | All outputs saved to examples/sample_output/
+2025-11-16 21:16:45 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 21:16:45 | orchestrator | INFO | Initializing agents...
+2025-11-16 21:16:45 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 21:16:45 | orchestrator | INFO | All agents initialized
+2025-11-16 21:16:45 | orchestrator | INFO | Starting content package creation for: Future of cyber security in 2026
+2025-11-16 21:16:45 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 21:17:32 | orchestrator | INFO | Research complete: 28 sources found
+2025-11-16 21:17:32 | orchestrator | INFO | Step 2: Creating content in parallel...
+2025-11-16 21:19:28 | orchestrator | ERROR | Error creating linkedin: LinkedIn agent error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-11-16 21:19:28 | orchestrator | INFO | Content created for 5 platforms
+2025-11-16 21:19:28 | orchestrator | INFO | Step 3: Fact-Checker Agent verifying...
+2025-11-16 21:20:06 | orchestrator | INFO | Fact-checking complete: 88% confidence
+2025-11-16 21:20:06 | orchestrator | WARNING | Warning: 2 claims flagged for review
+2025-11-16 21:20:06 | orchestrator | INFO | Step 4: Editor Agent polishing...
+2025-11-16 21:20:08 | orchestrator | ERROR | Error in content creation pipeline: Editor error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\agents\editor_agent.py", line 71, in edit
+    response = self.client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 5076, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\models.py", line 3858, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1330, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1166, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 477, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 378, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 420, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 187, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sarthak Patel\AppData\Local\Programs\Python\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\tenacity\__init__.py", line 480, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\_api_client.py", line 1143, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 106, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\pythonProject\content-factory-ai\.venv\Lib\site-packages\google\genai\errors.py", line 133, in raise_error
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\pythonProject\content-factory-ai\src\orchestrator.py", line 274, in create_content_package
+    edited_blog = await self.editor.edit(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pythonProject\content-factory-ai\src\agents\editor_agent.py", line 96, in edit
+    raise Exception(f"Editor error: {str(e)}")
+Exception: Editor error: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The model is overloaded. Please try again later.', 'status': 'UNAVAILABLE'}}
+2025-11-16 21:24:55 | orchestrator | INFO | ContentFactoryOrchestrator initialized
+2025-11-16 21:24:55 | orchestrator | INFO | Initializing agents...
+2025-11-16 21:24:55 | orchestrator | INFO | Brand voice loaded from memory
+2025-11-16 21:24:55 | orchestrator | INFO | All agents initialized
+2025-11-16 21:24:55 | orchestrator | INFO | Starting content package creation for: Future of Cyber Security in 2025
+2025-11-16 21:24:55 | orchestrator | INFO | Step 1: Research Agent working...
+2025-11-16 21:25:51 | orchestrator | INFO | Research complete: 35 sources found
+2025-11-16 21:25:53 | orchestrator | INFO | Step 2: Creating content...
+2025-11-16 21:25:53 | orchestrator | INFO | Creating blog post...
+2025-11-16 21:26:59 | orchestrator | INFO | Creating LinkedIn posts...
+2025-11-16 21:27:15 | orchestrator | INFO | Creating Twitter threads...
+2025-11-16 21:27:43 | orchestrator | INFO | Creating email newsletter...
+2025-11-16 21:27:56 | orchestrator | INFO | Creating video script...
+2025-11-16 21:28:20 | orchestrator | INFO | Content created for 5 platforms
+2025-11-16 21:28:20 | orchestrator | INFO | Step 3: Fact-Checker Agent verifying...
+2025-11-16 21:28:43 | orchestrator | INFO | Fact-checking complete: 88% confidence
+2025-11-16 21:28:43 | orchestrator | WARNING | Warning: 1 claims flagged for review
+2025-11-16 21:28:45 | orchestrator | INFO | Step 4: Editor Agent polishing...
+2025-11-16 21:29:12 | orchestrator | INFO | Editing complete: Readability score 32.68733095107203/100
+2025-11-16 21:29:14 | orchestrator | INFO | Step 5: SEO Agent optimizing...
+2025-11-16 21:29:46 | orchestrator | INFO | SEO optimization complete: Score 92/100
+2025-11-16 21:29:46 | orchestrator | INFO | Step 6: Analytics Agent learning...
+2025-11-16 21:29:46 | orchestrator | INFO | Analytics complete: 0 patterns identified
+2025-11-16 21:29:46 | orchestrator | INFO | Content package complete in 291.28 seconds
+2025-11-16 21:29:46 | orchestrator | INFO | All outputs saved to examples/sample_output/

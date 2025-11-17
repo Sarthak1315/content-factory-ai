@@ -1,0 +1,67 @@
+{
+  "duration_seconds": 76.109284,
+  "blog_word_count": 37,
+  "linkedin_posts_count": 0,
+  "twitter_threads_count": 0,
+  "verification_confidence": 100,
+  "readability_score": 44.23333333333335,
+  "seo_score": 0,
+  "sources_used": 0,
+  "flagged_claims": 0,
+  "keywords": {
+    "primary": "Future of AI Agents in 2025",
+    "secondary": [
+      "AI agent trends 2025",
+      "Agentic AI",
+      "Personal AI agents 2025",
+      "Enterprise AI agents 2025",
+      "AI assistants 2025",
+      "AI agents market 2025",
+      "AI automation 2025",
+      "Impact of AI agents 2025",
+      "AI agent use cases 2025",
+      "AI agent platforms 2025",
+      "AI agent evolution 2025",
+      "Autonomous AI agents",
+      "AI orchestrators",
+      "AI in business 2025"
+    ]
+  },
+  "timings": {
+    "research": {
+      "avg_seconds": 42.96,
+      "min_seconds": 42.96,
+      "max_seconds": 42.96,
+      "total_seconds": 42.96,
+      "count": 1
+    },
+    "content_creation": {
+      "avg_seconds": 1.47,
+      "min_seconds": 1.47,
+      "max_seconds": 1.47,
+      "total_seconds": 1.47,
+      "count": 1
+    },
+    "fact_checking": {
+      "avg_seconds": 2.79,
+      "min_seconds": 2.79,
+      "max_seconds": 2.79,
+      "total_seconds": 2.79,
+      "count": 1
+    },
+    "editing": {
+      "avg_seconds": 15.44,
+      "min_seconds": 15.44,
+      "max_seconds": 15.44,
+      "total_seconds": 15.44,
+      "count": 1
+    },
+    "seo": {
+      "avg_seconds": 13.45,
+      "min_seconds": 13.45,
+      "max_seconds": 13.45,
+      "total_seconds": 13.45,
+      "count": 1
+    }
+  }
+}

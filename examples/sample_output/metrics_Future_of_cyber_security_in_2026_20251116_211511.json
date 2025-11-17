@@ -1,0 +1,52 @@
+{
+  "duration_seconds": 204.847548,
+  "blog_word_count": 1538,
+  "linkedin_posts_count": 0,
+  "twitter_threads_count": 0,
+  "verification_confidence": 88,
+  "readability_score": 30.526038961038978,
+  "seo_score": 75,
+  "sources_used": 28,
+  "flagged_claims": 2,
+  "keywords": {
+    "primary": "Future of cyber security in 2026",
+    "secondary": []
+  },
+  "timings": {
+    "research": {
+      "avg_seconds": 54.06,
+      "min_seconds": 54.06,
+      "max_seconds": 54.06,
+      "total_seconds": 54.06,
+      "count": 1
+    },
+    "content_creation": {
+      "avg_seconds": 53.6,
+      "min_seconds": 53.6,
+      "max_seconds": 53.6,
+      "total_seconds": 53.6,
+      "count": 1
+    },
+    "fact_checking": {
+      "avg_seconds": 30.17,
+      "min_seconds": 30.17,
+      "max_seconds": 30.17,
+      "total_seconds": 30.17,
+      "count": 1
+    },
+    "editing": {
+      "avg_seconds": 38.68,
+      "min_seconds": 38.68,
+      "max_seconds": 38.68,
+      "total_seconds": 38.68,
+      "count": 1
+    },
+    "seo": {
+      "avg_seconds": 28.33,
+      "min_seconds": 28.33,
+      "max_seconds": 28.33,
+      "total_seconds": 28.33,
+      "count": 1
+    }
+  }
+}

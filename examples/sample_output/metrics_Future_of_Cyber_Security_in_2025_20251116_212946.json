@@ -1,0 +1,66 @@
+{
+  "duration_seconds": 291.280154,
+  "blog_word_count": 1579,
+  "linkedin_posts_count": 3,
+  "twitter_threads_count": 7,
+  "verification_confidence": 88,
+  "readability_score": 32.68733095107203,
+  "seo_score": 92,
+  "sources_used": 35,
+  "flagged_claims": 1,
+  "keywords": {
+    "primary": "Future of Cyber Security in 2025",
+    "secondary": [
+      "AI cyber threats",
+      "AI-powered attacks",
+      "quantum computing security",
+      "post-quantum cryptography (PQC)",
+      "ransomware 2025",
+      "ransomware campaigns",
+      "Zero Trust Architecture",
+      "cyber defense strategy",
+      "cybersecurity trends 2025",
+      "data security",
+      "critical infrastructure security",
+      "cybersecurity skills gap",
+      "cybersecurity regulations"
+    ]
+  },
+  "timings": {
+    "research": {
+      "avg_seconds": 56.77,
+      "min_seconds": 56.77,
+      "max_seconds": 56.77,
+      "total_seconds": 56.77,
+      "count": 1
+    },
+    "content_creation": {
+      "avg_seconds": 146.62,
+      "min_seconds": 146.62,
+      "max_seconds": 146.62,
+      "total_seconds": 146.62,
+      "count": 1
+    },
+    "fact_checking": {
+      "avg_seconds": 22.56,
+      "min_seconds": 22.56,
+      "max_seconds": 22.56,
+      "total_seconds": 22.56,
+      "count": 1
+    },
+    "editing": {
+      "avg_seconds": 27.18,
+      "min_seconds": 27.18,
+      "max_seconds": 27.18,
+      "total_seconds": 27.18,
+      "count": 1
+    },
+    "seo": {
+      "avg_seconds": 32.1,
+      "min_seconds": 32.1,
+      "max_seconds": 32.1,
+      "total_seconds": 32.1,
+      "count": 1
+    }
+  }
+}

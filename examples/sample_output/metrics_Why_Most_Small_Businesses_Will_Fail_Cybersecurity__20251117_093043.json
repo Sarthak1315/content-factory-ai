@@ -1,0 +1,52 @@
+{
+  "duration_seconds": 301.049885,
+  "blog_word_count": 2073,
+  "linkedin_posts_count": 0,
+  "twitter_threads_count": 0,
+  "verification_confidence": 89,
+  "readability_score": 49.88532085561502,
+  "seo_score": 75,
+  "sources_used": 31,
+  "flagged_claims": 2,
+  "keywords": {
+    "primary": "Why Most Small Businesses Will Fail Cybersecurity in 2025 \u2014 And the 5 Things They Could Fix in 30 Days",
+    "secondary": []
+  },
+  "timings": {
+    "research": {
+      "avg_seconds": 51.66,
+      "min_seconds": 51.66,
+      "max_seconds": 51.66,
+      "total_seconds": 51.66,
+      "count": 1
+    },
+    "content_creation": {
+      "avg_seconds": 56.85,
+      "min_seconds": 56.85,
+      "max_seconds": 56.85,
+      "total_seconds": 56.85,
+      "count": 1
+    },
+    "fact_checking": {
+      "avg_seconds": 57.62,
+      "min_seconds": 57.62,
+      "max_seconds": 57.62,
+      "total_seconds": 57.62,
+      "count": 1
+    },
+    "editing": {
+      "avg_seconds": 40.69,
+      "min_seconds": 40.69,
+      "max_seconds": 40.69,
+      "total_seconds": 40.69,
+      "count": 1
+    },
+    "seo": {
+      "avg_seconds": 67.9,
+      "min_seconds": 67.9,
+      "max_seconds": 67.9,
+      "total_seconds": 67.9,
+      "count": 1
+    }
+  }
+}
