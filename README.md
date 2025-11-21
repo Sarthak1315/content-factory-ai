@@ -811,7 +811,7 @@ If you find Content Factory AI helpful, please:
 
 **Built with ❤️ using Google's Agent Development Kit and Streamlit**
 
-*Last Updated: January 2025*
+*Last Updated: November 2025*
 
 ---
 
